@@ -2,17 +2,19 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig((opt) => {
+  console.info(opt);
   return {
     root: 'src',
     build: {
       outDir: '../dist',
-      emptyOutDir: true,
+      emptyOutDir: false,
       rollupOptions: {
         input: {
-          popup: resolve(__dirname, 'src/hello.html')
+          content_scripts: resolve(__dirname, 'src/content_scripts.ts'),
         },
         output: {
           entryFileNames: '[name].js',
+          inlineDynamicImports: true,
         },
       },
     },
