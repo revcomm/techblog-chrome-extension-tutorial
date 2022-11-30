@@ -1,4 +1,4 @@
-import { HELLO } from './constants.js';
+import { HELLO } from './constants';
 
 const $body = document.querySelector('body');
 const $p = document.createElement('p');
