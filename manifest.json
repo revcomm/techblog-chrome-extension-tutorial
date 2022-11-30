@@ -6,5 +6,15 @@
     "action": {
       "default_popup": "hello.html",
       "default_icon": "hello_extensions.png"
-    }
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "css": [ "content_styles.css" ],
+        "js": [ "content_scripts.js" ]
+      }
+    ]
  }
